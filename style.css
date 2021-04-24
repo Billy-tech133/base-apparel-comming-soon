@@ -1,0 +1,167 @@
+@import url(https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap);
+* {
+    box-sizing: border-box;
+   } 
+
+body {
+    background-image: url(images/bg-pattern-desktop.svg);
+    margin: 0;
+    background-size: cover;
+    font-family: 'Josefin Sans', 'sans-serif';
+}
+
+ .container {
+     display: flex;
+     min-height: 100vh;
+ }
+
+.left {
+    padding: 0 164px;
+    width: 60%;
+
+}
+.right {
+    width: 40%;
+    background-size: cover;
+    background-position: center center;
+    background-image: url(images/hero-desktop.jpg);
+}
+
+.logo {
+    margin: 60px 0;
+    width: 162px;
+}
+.hero-image {
+    display: none;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 60px;
+    margin: 0;
+    color: hsl(0, 6%, 24%);
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    transform: translateX(-100%);
+    animation: comeinleft 0.5s ease forwards;
+}
+
+
+h1 span {
+    color: hsl(0, 36%, 70%);
+    font-weight: 300;
+}
+
+p {
+    font-size: 18px;
+    line-height: 26px;
+    color: hsl(0, 36%, 70%);
+    margin: 40px 0;
+    transform: translateX(100%);
+    animation: comeinright 0.5s ease forwards;
+}
+
+
+.inner-container {
+    max-width: 500px;
+}
+form {
+    position: relative;
+    transform: translateX(-100%);
+    animation: comeinleft 0.5s ease forwards;
+}
+input:focus {
+    box-shadow: 0 0 5px hsla(0, 74%, 74%, 0.5);
+    outline: none;
+}
+
+input {
+    background-color: transparent;
+    color: hsl(0, 36%, 70%);
+    border: 1px solid hsl(0, 36%, 70%);
+    border-radius: 50px;
+    padding: 18px 30px;
+    height: 55px;
+    width: 100%;
+}
+form.error input{
+    border: 2px solid hsl(0, 93%, 68%);
+}
+input::placeholder {
+    color:  hsl(0, 36%, 70%);
+}
+
+button {
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    box-shadow: 2px 2px 5px hsla(0, 74%, 74%, 0.5);
+    padding: 18px;
+    border: none;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 50px;
+    top: 0;
+    right: 0;
+    height: 55px;
+    position: absolute;
+}
+
+button:hover {
+    background-image: linear-gradient( 135deg, hsl(0, 100%, 98%), hsl(0, 80%, 86%));
+}
+
+.error-icon {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 120px;
+}
+
+form.error .error-icon  {
+    display: block;
+}
+small {
+    opacity: 0;
+    color: hsl(0, 93%, 68%);
+    display: block;
+    margin-top: 18px;
+    margin-left: 18px;
+}
+
+form.error small {
+    opacity: 1;
+}
+@keyframes comeinleft {
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes comeinright {
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes comeinleft {
+    to {
+        transform: translateX(0);
+    }
+}
+@media screen and (max-width: 768px) {
+    .left {
+        padding: 0 30px;
+        width: 100%;
+    }
+    .right {
+        display: none;
+    }
+    .logo {
+        margin: 30px 0;
+        width: 30px;
+    }
+    .hero-image {
+        display: block;
+        margin-left: -40px;
+        margin-right: -40px;
+        width: calc(100% + 80%)
+    }
+}
